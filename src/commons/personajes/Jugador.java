@@ -1,28 +1,44 @@
 package commons.personajes;
 
+import java.net.Socket;
+
+import commons.Score;
 import commons.Ubicable;
 
 public class Jugador extends Ubicable {
 
-	private int puntaje;
-	private int nombre;
+	private Integer id;
+	private String name;
+	private Socket socket;
+	private Score historicalScore;
 
-	public int getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(int nombre) {
-		this.nombre = nombre;
+	public Jugador(Integer id, Socket socket,String name, Score historicalScore) {
+		this.id = id;
+		this.socket = socket;
+		this.name = name;
+		this.historicalScore = historicalScore;
 	}
 	
-	public int getPuntaje() {
-		return puntaje;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setPuntaje(int puntaje) {
-		this.puntaje = puntaje;
+	public String getName() {
+		return name;
 	}
-
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public Socket getSocket() {
+		return socket;
+	}
+	
+	public Score getHistoricalScore() {
+		return historicalScore;
+	}
+	
 	private int moverseAbajo(){
 		return 1;	
 	}
